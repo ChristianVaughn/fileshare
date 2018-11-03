@@ -34,7 +34,7 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     right.setAttribute('class', 'right');
 
     const h2 = document.createElement('h2');
-    h2.textContent = usermap.title;
+    h2.textContent = usermap.title.substring(0, 23);
     const small = document.createElement('small');
     small.textContent = usermap.username;
 
@@ -72,7 +72,7 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     h1.textContent = usermap.title;
     console.log(usermap.title);
     const p = document.createElement('p');
-    //movie.excerpt = movie.excerpt.substring(0, 300);
+    movie.excerpt = movie.excerpt.substring(0, 300);
     p.textContent = usermap.excerpt;
 
     container.appendChild(card);
