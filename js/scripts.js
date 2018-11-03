@@ -28,10 +28,7 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     const infoButton = document.createElement('a');
     //infoButton.setAttribute('href', '#');
     infoButton.setAttribute('class', 'toggle-info btn');
-    const left = document.createElement('span');
-    left.setAttribute('class', 'left');
-    const right = document.createElement('span');
-    right.setAttribute('class', 'right');
+
 
     const h2 = document.createElement('h2');
     h2.textContent = usermap.title.substring(0, 23);
@@ -57,8 +54,6 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     card.appendChild(mapImage);
     card.appendChild(cardTitle);
     cardTitle.appendChild(infoButton);
-    infoButton.appendChild(left);
-    infoButton.appendChild(right);
     cardTitle.appendChild(h2);
     h2.appendChild(small);
     card.appendChild(cardFlap1);
