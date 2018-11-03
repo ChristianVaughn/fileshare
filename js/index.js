@@ -1,4 +1,4 @@
-$( window ).on( "load", function() {
+dew.on( "show", function() {
   var zindex = 10;
   
   $("div.card").click(function(e){
