@@ -31,7 +31,7 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
 
 
     const h2 = document.createElement('h2');
-    h2.textContent = usermap.title.substring(0, 23);
+    h2.textContent = usermap.title.substring(0, 25);
     const small = document.createElement('small');
     small.textContent = usermap.username;
 
