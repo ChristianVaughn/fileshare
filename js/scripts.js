@@ -49,7 +49,7 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     const cardActions = document.createElement('div');
     cardActions.setAttribute('class', 'card-actions');
     const download = document.createElement('a');
-    download.setAttribute('href', '#');
+    download.setAttribute('href', usermap.mapFile);
     download.setAttribute('class', 'btn');
     download.textContent = "Download";
 
