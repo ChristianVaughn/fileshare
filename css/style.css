@@ -189,7 +189,7 @@ div.card.show div.card-title a.toggle-info span.right {
   left: 10px;
 }
 div.card.show div.card-flap {
-  background: #393a3e;
+  background: #2a3e5a;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
 }
