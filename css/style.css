@@ -35,7 +35,7 @@
   src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdr.ttf) format('truetype');
 }
 body {
-  background: #292a2b;
+  background: #1e2a3c;
   color: #DDDDDD;
   font-family: 'Source Sans Pro', sans-serif;
   text-rendering: optimizeLegibility;
@@ -72,7 +72,7 @@ div.cards {
   text-align: center;
 }
 div.card {
-  background: #393a3e;
+  background: #2a3e5a;
   display: inline-block;
   margin: 8px;
   max-width: 300px;
@@ -87,7 +87,7 @@ div.card img {
   max-width: 300px;
 }
 div.card div.card-title {
-  background: #393a3e;
+  background: #2a3e5a;
   padding: 6px 15px 10px;
   position: relative;
   z-index: 0;
@@ -102,7 +102,7 @@ div.card div.card-title a.toggle-info {
   width: 32px;
 }
 div.card div.card-title a.toggle-info span {
-  background: #393a3e;
+  background: #2a3e5a;
   display: block;
   height: 2px;
   position: absolute;
@@ -144,7 +144,7 @@ div.card div.card-actions {
   text-align: center;
 }
 div.card div.card-flap {
-  background: #141516;
+  background: #2a3e5a;
   position: absolute;
   width: 100%;
   -webkit-transform-origin: top;
