@@ -39,7 +39,7 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     cardFlap1.setAttribute('class', 'card-flap flap1');
     const description = document.createElement('div');
     description.setAttribute('class', 'card-description');
-    description.textContent = usermap.excerpt;
+    description.textContent = usermap.description;
     cardFlap1.appendChild(description);
     const cardFlap2 = document.createElement('div');
     cardFlap2.setAttribute('class', 'card-flap flap2');
