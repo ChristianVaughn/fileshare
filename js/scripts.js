@@ -1,15 +1,8 @@
 const app = document.getElementById('root');
+var currentSort = "New";
 
-/*const logo = document.createElement('img');
-logo.src = 'logo.png';
-
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
-
-app.appendChild(logo);
-app.appendChild(container);*/
-
-fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
+function updateScreen(p1) {
+fetch(p1).then(response => {
   return response.json();
 }).then(data => {
   // Work with JSON data here
@@ -62,19 +55,11 @@ fetch('https://alpha.dewritohub.com/api/fetch').then(response => {
     cardActions.appendChild(download);
 
     
-    /*
-    const h1 = document.createElement('h1');
-    h1.textContent = usermap.title;
-    console.log(usermap.title);
-    const p = document.createElement('p');
-    movie.excerpt = movie.excerpt.substring(0, 300);
-    p.textContent = usermap.excerpt;
-
-    container.appendChild(card);
-    card.appendChild(h1);
-    card.appendChild(p);*/
  
 });
 }).catch(err => {
   // Do something for an error here
 });
+}
+updateScreen('https://alpha.dewritohub.com/api/fetch');
+currentSort = "New";

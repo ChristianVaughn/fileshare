@@ -12,32 +12,6 @@ var stickTicks = { left: 0, right: 0, up: 0, down: 0 };
 var repGP;
 var lastHeldUpdated = 0;
 
-var settingsToLoad = [
-    ['sName', 'Server.Name', 'Server Name', 'Desc'],
-	['sMatchCountdown', 'Server.CountdownLobby', 'Match Start Countdown', 'Desc'], 
-    ['sCountdown', 'Server.Countdown', 'Round Start Countdown', 'Desc'], 
-    ['sMaxPlayers', 'Server.MaxPlayers', 'Max Players', 'Desc'], 
-    ['sNumberTeams', 'Server.NumberOfTeams', 'The desired number of teams', 'Desc'], 
-    ['sShouldAnnounce', 'Server.ShouldAnnounce', 'Display Server in Browser', 'Desc'],
-    ['sDualWieldEnabled', 'Server.DualWieldEnabled', 'Dual Wielding', 'Desc'], 
-    ['sAssassinationEnabled', 'Server.AssassinationEnabled', 'Assassinations', 'Desc'], 
-    ['sPass', 'Server.Password', 'Password', 'Desc'], 
-    ['sMessage', 'Server.Message', 'Join Message', 'Desc'],  
-    ['sTeamShufflingEnabled','Server.TeamShuffleEnabled', 'Team Shuffle', 'Desc'],
-    ['sMapVotingTime','Server.MapVotingTime', 'Voting Countdown', 'Desc'],
-    ['sNumOfRevotes','Server.NumberOfRevotesAllowed', 'Revotes', 'Desc'],
-    ['sNumberOfVotingOptions','Server.NumberOfVotingOptions', 'Voting Options', 'Desc'],
-    ['sVotingDuplicationLevel','Server.VotingDuplicationLevel', 'Voting Duplication', 'Desc'],
-    ['sTimeBetweenVoteEndAndGameStart','Server.TimeBetweenVoteEndAndGameStart', 'Winner/Start Time', 'Desc'],
-    ['sNumOfVetoes','Server.NumberOfVetoVotes', 'Max Veto Votes Per Round', 'Desc'],
-    ['sVetoVoteTime','Server.VetoVoteTime', 'Veto Countdown', 'Desc'],
-    ['sVetoWinningShowTime','Server.VetoWinningOptionShownTime', 'Winning Vote Display Time', 'Desc'],
-    ['sVetoPassPercentage','Server.VetoVotePassPercentage', 'Vote Pass Percentage', 'Desc'],
-    ['sVetoSystemSelectionType','Server.VetoSystemSelectionType', 'Veto System Selection Type', 'Desc'],
-    ['sUPNP','UPnP.Enabled', 'Universal Plug and Play (UPnP)', 'Desc'],
-    ['sNetworkMode', '', 'Network Mode', 'Desc'],
-    ['sVotingStyle', '', 'Voting Mode', 'Desc']
-];
 
 var bindChangeArray = [];
 var subPages = [];

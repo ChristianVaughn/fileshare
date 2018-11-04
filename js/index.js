@@ -1,3 +1,4 @@
+
 dew.on( "show", function() {
   var zindex = 10;
   
@@ -41,4 +42,36 @@ dew.on( "show", function() {
     }
     
   });
+  $("a.new").click(function(e){
+    e.preventDefault(); 
+    console.log((this).textContent);
+    if ((this).textContent == currentSort) {
+      console.log("samepage");
+      return;
+    }
+    else {
+      console.log("diffpage");
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      if ((this).textContent == "New") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch');
+        currentSort = "New";
+      }
+      if ((this).textContent == "Top") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=top');
+        currentSort = "Top";
+      }
+      if ((this).textContent == "Featured") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=featured');
+        currentSort = "Featured";
+      }
+      if ((this).textContent == "Updated") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=updated');
+        currentSort = "Updated";
+      }
+    }
+    
+  });
 });
+
