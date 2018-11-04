@@ -217,14 +217,7 @@ div[id^='page']:target #buttonConatiner{
 .tabs li a:hover {
 		color: #b6b6b6;
 }
-.tabs img{
-    display:none;
-    position:relative;
-    width: 3.75vh;
-    height: 3.75vh;
-		margin:0;
-		top: 0.3vh;
-}
+
 .bottomBar{
 	position:absolute;
 	bottom: -6.48vh;
@@ -817,6 +810,9 @@ a.btn {
   }
   div.card img {
 	max-width: 300px;
+	max-height: 169px;
+	width: 300px;
+	height: 169px;
   }
   div.card div.card-title {
 	background: #2a3e5a;

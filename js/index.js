@@ -1,10 +1,9 @@
 
 dew.on( "show", function() {
   var zindex = 10;
-  
+
   $("div.card").click(function(e){
     e.preventDefault();
-
     var isShowing = false;
 
     if ($(this).hasClass("show")) {
@@ -43,35 +42,60 @@ dew.on( "show", function() {
     
   });
   $("a.new").click(function(e){
+    var searchInput = document.getElementById('sarch');
     e.preventDefault(); 
-    console.log((this).textContent);
     if ((this).textContent == currentSort) {
-      console.log("samepage");
       return;
     }
     else {
-      console.log("diffpage");
+
+
+      $("div.cards").removeClass("showing");
       while (app.firstChild) {
         app.removeChild(app.firstChild);
       }
+
+      var input = encodeURIComponent(searchInput.value);
       if ((this).textContent == "New") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch');
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=new');
         currentSort = "New";
       }
       if ((this).textContent == "Top") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=top');
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=top');
         currentSort = "Top";
       }
       if ((this).textContent == "Featured") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=featured');
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=featured');
         currentSort = "Featured";
       }
       if ((this).textContent == "Updated") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=updated');
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=updated');
         currentSort = "Updated";
       }
     }
     
   });
+  var enterDisabled = false;
+  $(document).keydown(function (e) {
+    if (enterDisabled){
+        return;
+    }
+    var searchInput = document.getElementById('sarch');
+    if (e.keyCode === 13 && document.activeElement == searchInput) {
+
+        $("div.cards").removeClass("showing");
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+
+      var input = encodeURIComponent(searchInput.value);
+      updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s='+ currentSort);
+
+    enterDisabled = true;
+    setTimeout(function(){enterDisabled = false;}, 2000);
+    }
+
+  });
+
 });
 
