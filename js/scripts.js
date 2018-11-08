@@ -61,5 +61,5 @@ fetch(p1).then(response => {
   // Do something for an error here
 });
 }
-updateScreen('https://alpha.dewritohub.com/api/fetch');
+updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=new');
 currentSort = "New";
