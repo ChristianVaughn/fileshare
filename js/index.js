@@ -57,7 +57,7 @@ dew.on( "show", function() {
 
       var input = encodeURIComponent(searchInput.value);
       if ((this).textContent == "New") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=new');
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=new Date()');
         currentSort = "New";
       }
       if ((this).textContent == "Top") {
@@ -65,7 +65,7 @@ dew.on( "show", function() {
         currentSort = "Top";
       }
       if ((this).textContent == "Featured") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=featured');
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=featured ');
         currentSort = "Featured";
       }
       if ((this).textContent == "Updated") {
@@ -89,7 +89,23 @@ dew.on( "show", function() {
       }
 
       var input = encodeURIComponent(searchInput.value);
-      updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s='+ currentSort);
+      if (currentSort == "New") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=new Date()');
+        currentSort = "New";
+      }
+      if (currentSort == "Top") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=top');
+        currentSort = "Top";
+      }
+      if (currentSort == "Featured") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=featured');
+        currentSort = "Featured";
+      }
+      if (currentSort == "Updated") {
+        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=updated');
+        currentSort = "Updated";
+      }
+      //updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s='+ currentSort);
 
     enterDisabled = true;
     setTimeout(function(){enterDisabled = false;}, 2000);

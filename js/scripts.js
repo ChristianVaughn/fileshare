@@ -8,7 +8,10 @@ fetch(p1).then(response => {
   // Work with JSON data here
   console.log(data);
   data[0].forEach(usermap => {
-
+    if (usermap.gameMode == "Mods") {
+      return;
+    }
+    
     const card = document.createElement('div');
 
     card.setAttribute('class', 'card');
@@ -61,5 +64,5 @@ fetch(p1).then(response => {
   // Do something for an error here
 });
 }
-updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=new');
+updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=new Date()');
 currentSort = "New";
