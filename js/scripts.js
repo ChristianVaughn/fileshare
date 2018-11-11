@@ -15,15 +15,15 @@ fetch(p1).then(response => {
     const card = document.createElement('div');
 
     card.setAttribute('class', 'card');
+    //card.setAttribute('id', usermap.title.substring(0, 25));
+    //card.setAttribute('onclick', 'theFunction(event)');
 
     const mapImage = document.createElement('img');
     mapImage.src = usermap.thumbnail;
 
     const cardTitle = document.createElement('div');
     cardTitle.setAttribute('class', 'card-title');
-    const infoButton = document.createElement('a');
-    //infoButton.setAttribute('href', '#');
-    infoButton.setAttribute('class', 'toggle-info btn');
+
 
 
     const h2 = document.createElement('h2');
@@ -42,14 +42,13 @@ fetch(p1).then(response => {
     const cardActions = document.createElement('div');
     cardActions.setAttribute('class', 'card-actions');
     const download = document.createElement('a');
-    download.setAttribute('href', usermap.mapFile);
+    download.setAttribute('download', usermap.mapFile);
     download.setAttribute('class', 'btn');
     download.textContent = "Download";
 
     app.appendChild(card);
     card.appendChild(mapImage);
     card.appendChild(cardTitle);
-    cardTitle.appendChild(infoButton);
     cardTitle.appendChild(h2);
     h2.appendChild(small);
     card.appendChild(cardFlap1);
@@ -64,5 +63,5 @@ fetch(p1).then(response => {
   // Do something for an error here
 });
 }
-updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s=new Date()');
+updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s='+ new Date());
 currentSort = "New";
