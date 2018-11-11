@@ -23,7 +23,8 @@ Although this mod can do alot, there are a few issues that currently are impossi
 1.  Find less hacky way to get map folder name
 2.  Find way to make the FileshareHelper run in the background so you don't see it
 3.  Cards cant be clicked unless you exit CEF screen and relaunch fileshare CEF screen
-4.  Cards do not display map rating
+4.  Pressing enter on search sometimes shows duplicate results
+5.  Cards do not display map rating
 
 
 
