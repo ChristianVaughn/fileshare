@@ -28,7 +28,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 
 ## Help/Support/Contact
-You can ping me on the [ElDewrito Modding Discord](https://discord.gg/4dEPhDD), [ElDewrito Forge Discord](https://discord.gg/PnRePfv), the [HaloVault Discord](https://discord.gg/hVst8sR), or any of the other big Eldewrito related Discords if you have any issues, suggestions, or any other info about Fileshare.
+You can ping me on the [ElDewrito Modding Discord](https://discord.gg/4dEPhDD), [ElDewrito Forge Discord](https://discord.gg/PnRePfv), the [DewritoHub Discord](https://discord.gg/gtqM3s5), or any of the other big Eldewrito related Discords if you have any issues, suggestions, or any other info about Fileshare.
 
 
 If you have issues you can get in touch with me in those places, or make a bug report in the issue tracker and I can look over it.
