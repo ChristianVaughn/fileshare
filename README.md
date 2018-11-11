@@ -16,7 +16,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 <img src="http://i.imgur.com/mnsNCTg.jpg"  height="600" align="center"/>
 
 ## Download and Use
- Download the latest release [here](https://github.com/cvaughn55/fileshare/releases/tag/v0.5-Beta)
+ Download the latest release [here](https://github.com/cvaughn55/fileshare/releases/tag/v0.6-Beta)
  Extract the zip to the root of your Eldewrito folder, and use Eldorado+Fileshare.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded just open the console and type `fileshare` to get the Fileshare to open.
 
 ## To-Do list and Bugs
