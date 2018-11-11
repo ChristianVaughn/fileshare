@@ -7,30 +7,30 @@ var randomstring = require("randomstring");
 var haserror = false;
 function extractfiles() {
     try {
-    var zip = new AdmZip("./mods/temp.zip");
+    var zip = new AdmZip("../../../../../mods/temp.zip");
     var zipEntries = zip.getEntries(); // an array of ZipEntry records
 
     zipEntries.forEach(function(zipEntry) {
         //console.log(zipEntry.toString()); // outputs zip entries information
        if (zipEntry.name == "sandbox.map") {
            if (zipEntry.entryName == "sandbox.map") {
-                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "mods/maps/" +randomstring.generate(10) , true, true);
+                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "../../../../../mods/maps/" +randomstring.generate(10) , true, true);
            }
            else {
-                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "mods/maps", true, true);
+                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "../../../../../mods/maps", true, true);
            }
 
         }
         else if (zipEntry.name == "variant.ctf" || zipEntry.name == "variant.slayer" || zipEntry.name == "variant.oddball"|| zipEntry.name == "variant.koth" || zipEntry.name == "variant.forge" || zipEntry.name == "variant.vip" || zipEntry.name == "variant.jugg" || zipEntry.name == "variant.terries" || zipEntry.name == "variant.assault" || zipEntry.name == "variant.zombiez") {
             if(zipEntry.entryName == "variant.ctf" || zipEntry.entryName == "variant.slayer" || zipEntry.entryName == "variant.oddball"|| zipEntry.entryName == "variant.koth" || zipEntry.entryName == "variant.forge" || zipEntry.entryName == "variant.vip" || zipEntry.entryName == "variant.jugg" || zipEntry.entryName == "variant.terries" || zipEntry.entryName == "variant.assault" || zipEntry.entryName == "variant.zombiez"){
-                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "mods/variant/" +randomstring.generate(10) , true, true);
+                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "../../../../../mods/variant/" +randomstring.generate(10) , true, true);
             }
             else{
-                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "mods/variant", true, true);
+                zip.extractEntryTo(/*entry name*/zipEntry.entryName, "../../../../../mods/variant", true, true);
             }
         }
     });
-    fs.unlinkSync("./mods/temp.zip");
+    fs.unlinkSync("../../../../../mods/temp.zip");
     }
     catch(error){
         haserror = true;
@@ -52,7 +52,7 @@ server = http.createServer( function(req, res) {
             var file_url = body;
 
           download(file_url).then(data => {
-            fs.writeFileSync('./mods/temp.zip', data);
+            fs.writeFileSync('../../../../../mods/temp.zip', data);
             extractfiles();
             if(haserror == true) {
             res.writeHead(404, {'Content-Type': 'text/html'});
