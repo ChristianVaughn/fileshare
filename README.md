@@ -28,7 +28,10 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 
 ## Help/Support/Contact
-You can ping me on the [ElDewrito Modding Discord](https://discord.gg/4dEPhDD), [ElDewrito Forge Discord](https://discord.gg/PnRePfv), the [HaloVault Discord](https://discord.gg/hVst8sR), or any of the other big Eldewrito related Discords if you have any issues, suggestions, or any other info about Fileshare. Also the source to the Fileshare Helper, and changes to the local CEF are found in the Game Files branch of the repo.
+You can ping me on the [ElDewrito Modding Discord](https://discord.gg/4dEPhDD), [ElDewrito Forge Discord](https://discord.gg/PnRePfv), the [HaloVault Discord](https://discord.gg/hVst8sR), or any of the other big Eldewrito related Discords if you have any issues, suggestions, or any other info about Fileshare.
 
 
 If you have issues you can get in touch with me in those places, or make a bug report in the issue tracker and I can look over it.
+
+## Shoutouts
+Thanks so much to FinchMFG for providing the DewritoHub API which powers the fileshare, and for comming up with solutions for roadblocks that I hit along the way. Thanks to Hackerman who provided help with bugs and other issues along the way. Also shoutouts to the rest of the community who has been giving feedback and overall positive messages about this project. 
