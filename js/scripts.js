@@ -27,7 +27,7 @@ fetch(p1).then(response => {
 
 
     const h2 = document.createElement('h2');
-    h2.textContent = usermap.title.substring(0, 25);
+    h2.textContent = usermap.title.substring(0, 23);
     const small = document.createElement('small');
     small.textContent = usermap.username;
 
