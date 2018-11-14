@@ -1,4 +1,4 @@
-@font-face{font-family:"Conduit ITC";src:url(dew://lib/Conduit-ITC.woff);}
+e@font-face{font-family:"Conduit ITC";src:url(dew://lib/Conduit-ITC.woff);}
 @font-face {
 	font-family: 'Source Sans Pro';
 	font-style: normal;
@@ -851,7 +851,7 @@ a.btn {
   div.card div.card-title h2 {
 	font-size: 24px;
 	font-weight: 700;
-	letter-spacing: -0.05em;
+	letter-spacing: -0.02em;
 	margin: 0;
 	padding: 0;
   }
