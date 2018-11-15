@@ -21,11 +21,10 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 ## To-Do list and Bugs
 1.  Find less hacky way to get map folder name
-2.  Find way to make the FileshareHelper run in the background so you don't see it
-3.  Cards cant be clicked unless you exit CEF screen and relaunch fileshare CEF screen
-4.  Pressing enter on search sometimes shows duplicate results
-5.  Cards do not display map rating
-6.  Get maps screen to update so users dont need to restart game to see maps. 
+2.  Cards cant be clicked unless you exit CEF screen and relaunch fileshare CEF screen
+3.  Pressing enter on search sometimes shows duplicate results
+4.  Cards do not display map rating
+5.  Get maps screen to update so users dont need to restart game to see maps. 
 
 
 
@@ -36,4 +35,4 @@ You can ping me on the [ElDewrito Modding Discord](https://discord.gg/4dEPhDD), 
 If you have issues you can get in touch with me in those places, or make a bug report in the issue tracker and I can look over it.
 
 ## Shoutouts
-Thanks so much to FinchMFG for providing the DewritoHub API which powers the fileshare, and for comming up with solutions for roadblocks that I hit along the way. Thanks to Hackerman who provided help with bugs and other issues along the way. Also shoutouts to the rest of the community who has been giving feedback and overall positive messages about this project. 
+Thanks so much to FinchMFG for providing the DewritoHub API which powers the fileshare, and for comming up with solutions for roadblocks that I hit along the way. Thanks to Hackerman who provided help with bugs and other issues along the way. Thanks to Seedenator and 1c3bear for helping find many bugs due to spaces in user folders breaking things, and to Warm Beer who is fixing some things up with the design of the fileshare Also shoutouts to the rest of the community who has been giving feedback and overall positive messages about this project. 
