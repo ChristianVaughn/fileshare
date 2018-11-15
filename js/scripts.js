@@ -27,10 +27,16 @@ fetch(p1).then(response => {
 
 
     const h2 = document.createElement('h2');
-    h2.textContent = usermap.title.substring(0, 23);
+    h2.textContent = usermap.title.substring(0, 25);
     const small = document.createElement('small');
     small.textContent = usermap.username;
-
+    const rating = document.createElement('span');
+    rating.setAttribute('class', 'right');
+    for(i = 0; i < usermap.rating.length; i++){
+      const stars = document.createElement('div');
+      stars.setAttribute('class', 'fa fa-star starRate');
+      rating.appendChild(stars);
+    }
     const cardFlap1 = document.createElement('div');
     cardFlap1.setAttribute('class', 'card-flap flap1');
     const description = document.createElement('div');
@@ -51,6 +57,7 @@ fetch(p1).then(response => {
     card.appendChild(cardTitle);
     cardTitle.appendChild(h2);
     h2.appendChild(small);
+    h2.appendChild(rating);
     card.appendChild(cardFlap1);
     cardFlap1.appendChild(cardFlap2);
     cardFlap2.appendChild(cardActions);

@@ -1,4 +1,4 @@
-e@font-face{font-family:"Conduit ITC";src:url(dew://lib/Conduit-ITC.woff);}
+@font-face{font-family:"Conduit ITC";src:url(dew://lib/Conduit-ITC.woff);}
 @font-face {
 	font-family: 'Source Sans Pro';
 	font-style: normal;
@@ -851,13 +851,13 @@ a.btn {
   div.card div.card-title h2 {
 	font-size: 24px;
 	font-weight: 700;
-	letter-spacing: -0.03em;
+	letter-spacing: -0.05em;
 	margin: 0;
 	padding: 0;
   }
   div.card div.card-title h2 small {
 	display: block;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 600;
 	letter-spacing: -0.025em;
   }
@@ -940,4 +940,22 @@ a.btn {
 	font-size: 1.7vh;
 	background: rgba(66, 66, 66, 0.32);
 }
-  
+.right {
+	float: right;
+	top: 3.5vh;
+	right: -14vh;
+	position: absolute;
+	z-index: 2;
+}
+.fa {
+	font-weight: 900;
+	-webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+	line-height: 1;
+	color: #DDDDDD;
+	font-size: 16px;
+	margin: 1px;
+}
