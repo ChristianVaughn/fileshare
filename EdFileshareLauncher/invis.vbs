@@ -1,7 +1,4 @@
 Set oShell = CreateObject ("Wscript.Shell") 
-Set objFSO = CreateObject("Scripting.FileSystemObject")
-strFolder = objFSO.GetParentFolderName(WScript.ScriptFullName)
-strFolder = strFolder & "\\mods\\ui\web\\screens\\fileshare\\EldewritoFileshare.bat"
 Dim strArgs
-strArgs = "cmd /c "& strFolder
+strArgs = "cmd /c mods\ui\web\screens\fileshare\EldewritoFileshare.bat"
 oShell.Run strArgs, 0, false
