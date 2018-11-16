@@ -22,7 +22,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 ## To-Do list and Bugs
 1.  Find less hacky way to get map folder name
 2.  Cards cant be clicked unless you exit CEF screen and relaunch fileshare CEF screen(fixed on upcomming BeerKeg Version)
-3.  Pressing enter on search sometimes shows duplicate results
+3.  Pressing enter on search sometimes shows duplicate results(Not apparent in my testing, but reported by 1 user. not sure if true or not)
 4.  Get maps screen to update so users dont need to restart game to see maps. 
 
 
