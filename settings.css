@@ -941,9 +941,10 @@ a.btn {
 	background: rgba(66, 66, 66, 0.32);
 }
 .right {
-	float: right;
+	display: flex;
+	justify-content: flex-end;
 	top: 3.5vh;
-	right: -14vh;
+	right: -3.25vh;
 	position: absolute;
 	z-index: 2;
 }

@@ -33,9 +33,11 @@ fetch(p1).then(response => {
     const rating = document.createElement('span');
     rating.setAttribute('class', 'right');
     for(i = 0; i < usermap.rating.length; i++){
-      const stars = document.createElement('div');
-      stars.setAttribute('class', 'fa fa-star starRate');
-      rating.appendChild(stars);
+      if(usermap.rating[i] == "X") {
+        const stars = document.createElement('div');
+        stars.setAttribute('class', 'fa fa-star starRate');
+        rating.prepend(stars);
+      }
     }
     const cardFlap1 = document.createElement('div');
     cardFlap1.setAttribute('class', 'card-flap flap1');
