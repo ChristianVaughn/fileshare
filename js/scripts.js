@@ -35,7 +35,12 @@ fetch(p1).then(response => {
     for(i = 0; i < usermap.rating.length; i++){
       if(usermap.rating[i] == "X") {
         const stars = document.createElement('div');
-        stars.setAttribute('class', 'fa fa-star starRate');
+        stars.setAttribute('class', 'fas fa-star starRate');
+        rating.prepend(stars);
+      }
+      else {
+        const stars = document.createElement('div');
+        stars.setAttribute('class', 'far fa-star starRate');
         rating.prepend(stars);
       }
     }

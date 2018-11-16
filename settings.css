@@ -947,9 +947,11 @@ a.btn {
 	right: -3.25vh;
 	position: absolute;
 	z-index: 2;
+	font-size: .75em	;
+
 }
-.fa {
-	font-weight: 900;
+.fa .fas .far {
+	font-weight: 700;
 	-webkit-font-smoothing: antialiased;
     display: inline-block;
     font-style: normal;
@@ -957,6 +959,6 @@ a.btn {
     text-rendering: auto;
 	line-height: 1;
 	color: #DDDDDD;
-	font-size: 16px;
+	font-size: .75em	;
 	margin: 1px;
 }
