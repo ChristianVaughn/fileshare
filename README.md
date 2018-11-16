@@ -23,8 +23,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 1.  Find less hacky way to get map folder name
 2.  Cards cant be clicked unless you exit CEF screen and relaunch fileshare CEF screen
 3.  Pressing enter on search sometimes shows duplicate results
-4.  Cards do not display map rating
-5.  Get maps screen to update so users dont need to restart game to see maps. 
+4.  Get maps screen to update so users dont need to restart game to see maps. 
 
 
 
