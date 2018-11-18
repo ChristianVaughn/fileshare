@@ -6,8 +6,8 @@
     <script type="text/javascript" src="dew://lib/dew.js"></script>
     <script type="text/javascript" src="dew://lib/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="dew://lib/jquery-ui.js"></script>
-    <script type="text/javascript" src="settings.js"></script>
-
+    <script src="window-resize-1080.js"></script>
+    <link rel="stylesheet" type="text/css" href="window-resize-1080.css" />
     <link rel="stylesheet" href="settings.css">
     <link rel="stylesheet" href="dew://lib/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <div id="blackLayer"></div>
-    <div id="settingsWindow">
+    <div id="container">
+        <div class="page_content">
         <div class="options-header">
 
             <div class="type-tabs">
@@ -35,11 +35,11 @@
             </div>
             <div class="right-options">
                 <button id="applyButton"><img class="button">Apply</button>
-                <button id="cancelButton"><img class="button">Close</button>
+                <!-- <button id="cancelButton" onclick="closeBrowser()"><img src="dew://assets/buttons/XboxOne_B.png">Close</button> -->
             </div>
         </div>
 
-        <div class="container">
+        <div class="wrap">
             <div id="root" class="cards">
             </div>
             <div id="summary" class="summ">
@@ -92,13 +92,13 @@
 
         <div class="options-bottom">
 
-            <a id="previous" class="navbutton">Previous&#160;&#160;&#160;</a>
+            <a id="previous" class="navbutton"><i class="fa fa-arrow-left"></i>&#160;&#160;&#160;</a>
             <a id="page">1</a>
             <a id="pages">of 2</a>
-            <a id="next" class="navbutton">&#160;&#160;&#160;Next</a>
+            <a id="next" class="navbutton">&#160;&#160;&#160;<i class="fa fa-arrow-right"></i></a>
 
         </div>
-        
+        </div>
     </div>
 
     <script>

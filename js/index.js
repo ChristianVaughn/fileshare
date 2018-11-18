@@ -58,6 +58,12 @@ dew.on("show", function() {
         }
     });
     
+    $(document).keyup(function(e) {
+     if (e.key === "Escape") { // escape key maps to keycode `27`
+        closeBrowser();
+    }
+    });
+    
     let listFilterTextbox = document.getElementById('sarch');
     listFilterTextbox.addEventListener('input', function(e) {
         onSearch(e.target.value);

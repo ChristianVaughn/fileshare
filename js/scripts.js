@@ -60,9 +60,14 @@ function changefocus(cid) {
         img.setAttribute('src', link);
         document.getElementById("img-slider").appendChild(img);
     }
+    
+    let title = newData[cid]['title'];
+    if(title.length > 55) {
+        title = title.substr(0, 55) + '...';
+    }
 
-    document.getElementById("title").innerHTML = newData[cid]['title'].substr(0, 55) + '...';
-    document.getElementById("author").innerHTML = 'By: ' + newData[cid]['username'] + ' - ' + timedifference(newData[cid]['date']);
+    document.getElementById("title").innerHTML = title;
+    document.getElementById("author").innerHTML = newData[cid]['username'] + ' - ' + timedifference(newData[cid]['date']);
     document.getElementById("link").href = 'https://dewritohub.com/map/' + newData[cid]['_id'] + '/' + newData[cid]['title'];
 
     document.getElementById("date").innerHTML = getdate(newData[cid]['date']);
@@ -75,7 +80,13 @@ function changefocus(cid) {
     }
 
     document.getElementById("edit").innerHTML = getdate(newData[cid]['lastEdit']);
-    document.getElementById("text").innerHTML = newData[cid]['excerpt'].substr(0, 170) + '...';
+    
+    let text = newData[cid]['excerpt'];
+    if(text.length > 170) {
+        text = text.substr(0, 170) + '...';
+    }
+    
+    document.getElementById("text").innerHTML = text;
     document.getElementById("download-link").download = newData[cid]['dlMap'];
 }
 
@@ -142,6 +153,11 @@ function getdate(x) {
     }
     
     return String(dt + '-' + month + '-' + year);
+}
+
+function closeBrowser() {
+    dew.hide();
+    dew.command('Game.HideH3UI 0');
 }
 
 function render(q) {
