@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title></title>
@@ -6,42 +7,128 @@
     <script type="text/javascript" src="dew://lib/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="dew://lib/jquery-ui.js"></script>
     <script type="text/javascript" src="settings.js"></script>
+
     <link rel="stylesheet" href="settings.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="dew://lib/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 </head>
+
 <body>
     <div id="blackLayer"></div>
     <div id="settingsWindow">
-        <h1 class="header">Fileshare
-            <input class="search" id="sarch" placeholder="search...">
-        </h1>
-        <ul class="tabs">
+        <div class="options-header">
 
-            <li><a class="new" >New</a></li>
-            <li><a class="new" >Top</a></li>
-            <li><a class="new">Featured</a></li>
-            <li><a class="new">Updated</a></li>
-        </ul>
-        
-        <div id="root" class="cards">
-            
-        
-        
+            <div class="type-tabs">
+                <ul id="typeTabs">
+                    <li><a id="New" class="new selected">New</a></li>
+                    <li><a id="Top" class="new">Top</a></li>
+                    <li><a id="Featured" class="new">Featured</a></li>
+                    <li><a id="Updated" class="new">Updated</a></li>
+                    <li>
+                        <div class="searchbox">
+                            <input class="search" id="sarch" placeholder="search...">
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="right-options">
+                <button id="applyButton"><img class="button">Apply</button>
+                <button id="cancelButton"><img class="button">Close</button>
+            </div>
         </div>
-        <div id="backgroundFill"></div>
 
-				<div class="bottomBar">
-					<button id="applyButton"><img class="button">Apply</button>
-					<button id="cancelButton"><img class="button">Close</button>
-				</div>
+        <div class="container">
+            <div id="root" class="cards">
+            </div>
+            <div id="summary" class="summ">
+                <div class="w3-content w3-display-container" id="img-slider">
+
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+
+                <div class="quick-info">
+                    <div id="title" class="map-title">Title</div>
+                    <div id="author" class="map-author">Author</div>
+                    <br>
+                    <a id="link" href="" target="_blank">open on Dewritohub.com</a>
+                </div>
+
+                <div class="caption" id="text">
+                    Jedi grab your sabers and duke it out in this multi-strata ctf, and show off your skills as either swordsmen or team members!
+                </div>
+
+                <div class="caption" id="stats">
+
+                    <span id="date" class="stat">Nov 15, 2018</span>
+                    <span class="info">Upload Date</span>
+
+                    <span id="downloads" class="stat">9</span>
+                    <span class="info">Downloads</span>
+
+                    <span id="gamemode" class="stat">CTF</span>
+                    <span class="info">Gamemode</span>
+
+                    <span id="rating" class="stat">
+                        <div class="fas fa-star starRate"></div>
+                        <div class="fas fa-star starRate"></div>
+                        <div class="fas fa-star starRate"></div>
+                        <div class="fas fa-star starRate"></div>
+                        <div class="fas fa-star starRate"></div>
+                    </span>
+                    <span class="info">Rating</span>
+
+                    <span id="edit" class="stat">999</span>
+                    <span class="info">Last Update</span>
+
+                </div>
+
+                <a id="download-link" download="" class="download-button">Download Map</a>
+
+            </div>
+        </div>
+
+        <div class="options-bottom">
+
+            <a id="previous" class="navbutton">Previous&#160;&#160;&#160;</a>
+            <a id="page">1</a>
+            <a id="pages">of 2</a>
+            <a id="next" class="navbutton">&#160;&#160;&#160;Next</a>
+
+        </div>
+        
     </div>
 
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("imgSlider");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
-    <script  src="js/scripts.js"></script>
-    <script  src="js/index.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
-</html>
 
+</html>

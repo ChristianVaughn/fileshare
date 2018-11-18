@@ -1,155 +1,116 @@
-
-dew.on( "show", function() {
-  if ($("div.cards").hasClass("showing")) {
-    // a card is already in view
-    $("div.card.show")
-      .removeClass("show");
-    $("div.cards").removeClass("showing");
-  }
-    //  while (app.firstChild) {
-     //   app.removeChild(app.firstChild);
-    //  }
-  //updateScreen('https://alpha.dewritohub.com/api/fetch?q=?s='+ new Date());
-
-  var zindex = 10;
- // var downloadDisabled = false;
-
-  $("div.card a").off().click(function(e){
-    //if (downloadDisabled == true) {
-      //return;
-    //}
-    e.stopPropagation();
-    console.log(this.download);
-    $.post('http://localhost:3000', this.download).done(function() {
-      dew.toast({body:'Download was a Success!'});
-    }).fail(function() {
-      dew.toast({body:`<div>Download failed! Please Try again later.</div>
-        <div>Report issue to Cvaughn55 if issue persists.</div>`
-    });
-
-    });
-  
-  });
-  
-    $("div.card").click(function(e){
-  
-      var isShowing = false;
-  
-      if ($(this).hasClass("show")) {
-        isShowing = true
-      }
-  
-      if ($("div.cards").hasClass("showing")) {
-        // a card is already in view
-        $("div.card.show")
-          .removeClass("show");
-  
-        if (isShowing) {
-          // this card was showing - reset the grid
-          $("div.cards")
-            .removeClass("showing");
-        } else {
-          // this card isn't showing - get in with it
-          $(this)
-            .css({zIndex: zindex})
-            .addClass("show");
-  
-        }
-  
-        zindex++;
-  
-      } else {
-        // no cards in view
-        $("div.cards")
-          .addClass("showing");
-        $(this)
-          .css({zIndex:zindex})
-          .addClass("show");
-  
-        zindex++;
-      }
-      
-    });
-
-
-
-  $("a.new").click(function(e){
-    var searchInput = document.getElementById('sarch');
-    e.preventDefault(); 
-    if ((this).textContent == currentSort) {
-      return;
-    }
-    else {
-
-
-      $("div.cards").removeClass("showing");
-      while (app.firstChild) {
-        app.removeChild(app.firstChild);
-      }
-      zindex = 10;
-      var input = encodeURIComponent(searchInput.value);
-      if ((this).textContent == "New") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=' + new Date());
+dew.on("show", function() {
+    
+    dew.command('Game.HideH3UI 1');
+    
+    if(firstload) {
+        // updates the screen since this is the first load of the menu and sets the sort to new
         currentSort = "New";
-
-      }
-      if ((this).textContent == "Top") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=top');
-        currentSort = "Top";
-
-
-      }
-      if ((this).textContent == "Featured") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=featured ');
-        currentSort = "Featured";
-
-      }
-      if ((this).textContent == "Updated") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=updated');
-        currentSort = "Updated";
-
-      }
+        updateScreen('https://dewritohub.com/api/altfetch?r=' + new Date());
+        firstload = false;
     }
     
-  });
-  var enterDisabled = false;
-  $(document).keydown(function (e) {
-    if (enterDisabled){
-        return;
-    }
-    var searchInput = document.getElementById('sarch');
-    if (e.keyCode === 13 && document.activeElement == searchInput) {
+    //when clicking on a sort category on top any text in the search bar is used to sort that search. 
+    //Empty search bar is just the default new, top, featured, and updated
+    $("a.new").click(function(e) {
+        var searchInput = document.getElementById('sarch');
+        e.preventDefault();
 
-        $("div.cards").removeClass("showing");
-      while (app.firstChild) {
-        app.removeChild(app.firstChild);
-      }
-      zindex = 10;
-      var input = encodeURIComponent(searchInput.value);
-      if (currentSort == "New") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s='+ new Date());
-        currentSort = "New";
-      }
-      if (currentSort == "Top") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=top');
-        currentSort = "Top";
-      }
-      if (currentSort == "Featured") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=featured');
-        currentSort = "Featured";
-      }
-      if (currentSort == "Updated") {
-        updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s=updated');
-        currentSort = "Updated";
-      }
-      //updateScreen('https://alpha.dewritohub.com/api/fetch?q='+ input +'?s='+ currentSort);
+        //if the current sort is the one you clicked just ignore it.
+        if ((this).textContent == currentSort) {
+            return;
+        }
 
-    enterDisabled = true;
-    setTimeout(function(){enterDisabled = false;}, 2000);
-    }
+        //if current sort is not same as clicked, remove all cards and update screen with new sort and whatever is in the searchbar
+        else {
+            var input = encodeURIComponent(searchInput.value);
+            if ((this).textContent == "New") {
+                selected((this).textContent);
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=new', page);
+            }
+            if ((this).textContent == "Top") {
+                selected((this).textContent);
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=top', page);
+            }
+            if ((this).textContent == "Featured") {
+                selected((this).textContent);
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=featured ', page);
+            }
+            if ((this).textContent == "Updated") {
+                selected((this).textContent);
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=updated', page);
+            }
+        }
 
-  });
+    });
+
+    $("#next").unbind().click(function(e) {
+        e.preventDefault();
+        if (page < pages) {
+            page++;
+            render(q);
+        }
+    });
+    $("#previous").unbind().click(function(e) {
+        e.preventDefault();
+        if (page > 1) {
+            page--;
+            render(q);
+        }
+    });
+    
+    let listFilterTextbox = document.getElementById('sarch');
+    listFilterTextbox.addEventListener('input', function(e) {
+        onSearch(e.target.value);
+    });
+
+    /*
+    var enterDisabled = false;
+    //function to se ewhen enter key is pressed down.
+    $(document).keydown(function(e) {
+
+        //if cooldown for enterkey spam is not done then just stop
+        if (enterDisabled) {
+            return;
+        }
+
+        //get the text from the searchbar and if the enter key was pressed on the search bar so a search
+        var searchInput = document.getElementById('sarch');
+        if (e.keyCode === 13 && document.activeElement == searchInput) {
+
+            console.log('clicked');
+
+            e.stopImmediatePropagation(); //prevents enter spam causing repeat maps to show
+            e.preventDefault(); //prevents enter spam causing repeat maps to show
+
+            //remove all current cards on the screen
+            //get input from searchbar and update screen with the input and whatever the current sort method is.
+            var input = encodeURIComponent(searchInput.value);
+            if (currentSort == "New") {
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=new', page);
+                currentSort = "New";
+            }
+            if (currentSort == "Top") {
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=top', page);
+                currentSort = "Top";
+            }
+            if (currentSort == "Featured") {
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=featured', page);
+                currentSort = "Featured";
+            }
+            if (currentSort == "Updated") {
+                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=updated', page);
+                currentSort = "Updated";
+            }
+
+            enterDisabled = true; //disable enter button and re-enables it 2 seconds later with next line.
+            setTimeout(function() {
+                enterDisabled = false;
+            }, 2000); //used to prevent enter key from triggering search multiple times with one press
+        }
+
+    });
+    */
+
+    reload();
 
 });
-
-
