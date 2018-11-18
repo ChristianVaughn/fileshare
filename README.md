@@ -13,7 +13,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 
 
-<img src="http://i.imgur.com/mnsNCTg.jpg"  height="600" align="center"/>
+<img src="http://i.imgur.com/wEF0rzM.jpg"  height="600" align="center"/>
 
 ## Download and Use
  Download the latest release [here](https://github.com/cvaughn55/fileshare/releases)
@@ -35,6 +35,7 @@ If you have issues you can get in touch with me in those places, or make a bug r
 ##Creators
 Cvaughn55 - Created the FileshareHelper and the OG design of the fileshare which was basic, buggy and lacked features
 Warm Beer - Took my fileshare design and completely re-designed it and made it faster, more efficient and added so many new features that make it an amazing addition to your eldewrito experience
+FinchMFG - Creator of Dewritohub, the site where people can share and download Eldewrito Maps. Also created the API that makes this fileshare possible.
 
 ## Shoutouts
 Thanks so much to FinchMFG for providing the DewritoHub API which powers the fileshare, and for comming up with solutions for roadblocks that I hit along the way. Thanks to Hackerman who provided help with bugs and other issues along the way. Thanks to Seedenator and 1c3bear for helping find many bugs due to spaces in user folders breaking things, and to Warm Beer who is fixing some things up with the design of the fileshare Also shoutouts to the rest of the community who has been giving feedback and overall positive messages about this project. 
