@@ -35,6 +35,7 @@ If you have issues you can get in touch with me in those places, or make a bug r
 ## Creators
 Cvaughn55 - Created the FileshareHelper and the OG design of the fileshare which was basic, buggy and lacked features
 Warm Beer - Took my fileshare design and completely re-designed it and made it faster, more efficient and added so many new features that make it an amazing addition to your eldewrito experience
+
 FinchMFG - Creator of Dewritohub, the site where people can share and download Eldewrito Maps. Also created the API that makes this fileshare possible.
 
 ## Shoutouts
