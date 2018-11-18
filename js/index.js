@@ -63,54 +63,6 @@ dew.on("show", function() {
         onSearch(e.target.value);
     });
 
-    /*
-    var enterDisabled = false;
-    //function to se ewhen enter key is pressed down.
-    $(document).keydown(function(e) {
-
-        //if cooldown for enterkey spam is not done then just stop
-        if (enterDisabled) {
-            return;
-        }
-
-        //get the text from the searchbar and if the enter key was pressed on the search bar so a search
-        var searchInput = document.getElementById('sarch');
-        if (e.keyCode === 13 && document.activeElement == searchInput) {
-
-            console.log('clicked');
-
-            e.stopImmediatePropagation(); //prevents enter spam causing repeat maps to show
-            e.preventDefault(); //prevents enter spam causing repeat maps to show
-
-            //remove all current cards on the screen
-            //get input from searchbar and update screen with the input and whatever the current sort method is.
-            var input = encodeURIComponent(searchInput.value);
-            if (currentSort == "New") {
-                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=new', page);
-                currentSort = "New";
-            }
-            if (currentSort == "Top") {
-                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=top', page);
-                currentSort = "Top";
-            }
-            if (currentSort == "Featured") {
-                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=featured', page);
-                currentSort = "Featured";
-            }
-            if (currentSort == "Updated") {
-                updateScreen('https://dewritohub.com/api/altfetch?q=' + input + '?s=updated', page);
-                currentSort = "Updated";
-            }
-
-            enterDisabled = true; //disable enter button and re-enables it 2 seconds later with next line.
-            setTimeout(function() {
-                enterDisabled = false;
-            }, 2000); //used to prevent enter key from triggering search multiple times with one press
-        }
-
-    });
-    */
-
     reload();
 
 });
