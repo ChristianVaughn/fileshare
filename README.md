@@ -23,7 +23,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 1.  Find less hacky way to get map folder name
 2.  Get maps screen to update so users dont need to restart game to see maps. 
 3. Try and bring back fileshare option in the maps menu
-4. Add
+4. Add new features as Finch upgrades the API. One of which potentially being uploading maps
 
 
 
