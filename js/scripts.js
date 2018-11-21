@@ -8,6 +8,8 @@ var firstload = true;
 var q = ''
 var newData =[];
 
+dew.command('bind F12 game.showscreen fileshare');
+
 function updateScreen(p1, pagenumber) {
     fetch(p1).then(response => {
         return response.json();
