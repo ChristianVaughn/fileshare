@@ -20,10 +20,11 @@ Although this mod can do alot, there are a few issues that currently are impossi
  Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded just open the console and type `fileshare` to get the Fileshare to open.
 
 ## To-Do list and Bugs
-1.  Find less hacky way to get map folder name
-2.  Get maps screen to update so users dont need to restart game to see maps. 
-3. Try and bring back fileshare option in the maps menu
-4. Add new features as Finch upgrades the API. One of which potentially being uploading maps
+1. Find less hacky way to get map folder name
+2. Get maps screen to update so users dont need to restart game to see maps. 
+3. Try and bring back fileshare option in the maps menuwhat
+4. Rename maps with same name.
+5. Add new features as Finch upgrades the API. One of which potentially being uploading maps
 
 
 
