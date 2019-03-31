@@ -20,7 +20,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 ## Download and Use
  Download the latest release [here](https://github.com/cvaughn55/fileshare/releases)
- Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded just open the console and type `fileshare` to get the Fileshare to open.
+ Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare and press F10 to open the map selector.
 
 ## To-Do list and Bugs
 1. Find less hacky way to get map folder name(Not sure if still an issue)
