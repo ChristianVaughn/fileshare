@@ -30,6 +30,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 5. Fix not being able to download straignt sandbox.map files uploaded
 6. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and no folder
 7. Download map preview image along with map for the map selector menu
+8. Add gametype selector menu to go along with the map selector menu
 
 
 
