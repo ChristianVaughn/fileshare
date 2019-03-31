@@ -5,8 +5,8 @@
 # Fileshare
 Download maps from DewritoHub from within Eldewrito
 
-## Updates 3/30/19
-A new update is being worked on to add more features to the fileshare. The main thing being worked on is a CEF map selection screen to allow users to load the map they just downloaded instead of restarting the game to do so. There is also some backend stuff being worked on such as extracting folders in a much nicer way than before, and some other components that were created just for the map selection screen. There is no ETA on the update yet because of my busy school schedule, but I will try to get it out ASAP.
+## Updates 3/30/19 v0.7-Beta
+The main thing in this update worked on is a CEF map selection screen to allow users to load the map they just downloaded instead of restarting the game to do so. There is also some backend stuff such as extracting folders in a much nicer way than before, and some other components that were created just for the map selection screen. There might be more updates in the future when I find more time to work on squashing those bugs, and adding new features.
 
 ## What is Fileshare?
 Fileshare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
