@@ -5,8 +5,8 @@
 # Fileshare
 Download maps from DewritoHub from within Eldewrito
 
-## Updates 3/30/19 v0.7-Beta
-The main thing in this update worked on is a CEF map selection screen to allow users to load the map they just downloaded instead of restarting the game to do so. There is also some backend stuff such as extracting folders in a much nicer way than before, and some other components that were created just for the map selection screen. There might be more updates in the future when I find more time to work on squashing those bugs, and adding new features.
+## Updates 3/31/19 v0.7.1-Beta
+New Update adding a Game Type selection screen, and both the map select screen and game type screen show the author below the map name. Fututre updates will replace the generic unknown image for the gametypes, and possibly have custom map images for the various maps based on their DewritoHub thumbnail image. Also the issue of not being able to load maps with random foldernames should be fixed, and I just need to fix downloading single .map files uploaded to DH.
 
 ## What is Fileshare?
 Fileshare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
@@ -20,17 +20,16 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 ## Download and Use
  Download the latest release [here](https://github.com/cvaughn55/fileshare/releases)
- Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare and press F10 to open the map selector.
+ Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.
 
 ## To-Do list and Bugs
-1. Find less hacky way to get map folder name(Not sure if still an issue)
-2. Try and bring back fileshare option in the maps menuwhat
-3. Rename maps with same name.
-4. Add new features as Finch upgrades the API. One of which potentially being uploading maps
-5. Fix not being able to download straignt sandbox.map files uploaded
-6. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and no folder
-7. Download map preview image along with map for the map selector menu
-8. Add gametype selector menu to go along with the map selector menu
+1. Try and bring back fileshare option in the maps menuwhat
+2. Rename maps with same name.
+3. Add new features as Finch upgrades the API. One of which potentially being uploading maps
+4. Fix not being able to download straignt sandbox.map files uploaded
+5. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and no folder
+6. Download map preview image along with map for the map selector menu
+7. Replace placeholder image on Variant selection screen
 
 
 
