@@ -1,17 +1,69 @@
-var db = '<div class="card" data="s3d_avalanche"><img src="./img/diamondback.jpg"><div class="card-title"><h2>Diamondback</h2></div></div>'
-var ed = '<div class="card" data="s3d_edge"><img src="./img/edge.jpg"><div class="card-title"><h2>Edge</h2></div></div>'
-var gu = '<div class="card" data="guardian"><img src="./img/guardian.jpg"><div class="card-title"><h2>Guardian</h2></div></div>'
-var hi = '<div class="card" data="deadlock"><img src="./img/highground.jpg"><div class="card-title"><h2>High Ground</h2></div></div>'
-var ic = '<div class="card" data="s3d_turf"><img src="./img/icebox.jpg"><div class="card-title"><h2>Icebox</h2></div></div>'
-var la = '<div class="card" data="zanzibar"><img src="./img/lastresort.jpg"><div class="card-title"><h2>Last Resort</h2></div></div>'
-var na = '<div class="card" data="chill"><img src="./img/narrows.jpg"><div class="card-title"><h2>Narrows</h2></div></div>'
-var re = '<div class="card" data="s3d_reactor"><img src="./img/reactor.jpg"><div class="card-title"><h2>Reactor</h2></div></div>'
-var sa = '<div class="card" data="shrine"><img src="./img/sandtrap.jpg"><div class="card-title"><h2>Sandtrap</h2></div></div>'
-var st = '<div class="card" data="Bunkerworld"><img src="./img/standoff.jpg"><div class="card-title"><h2>Standoff</h2></div></div>'
-var th = '<div class="card" data="cyberdyne"><img src="./img/thepit.jpg"><div class="card-title"><h2>The Pit</h2></div></div>'
-var va = '<div class="card" data="riverworld"><img src="./img/valhalla.jpg"><div class="card-title"><h2>Valhalla</h2></div></div>'
-
+var db = '<div class="card" data="s3d_avalanche"><img src="dew://assets/maps/large/s3d_avalanche.jpg"><div class="card-title"><h2>Diamondback</h2></div></div>'
+var ed = '<div class="card" data="s3d_edge"><img src="dew://assets/maps/large/s3d_edge.jpg"><div class="card-title"><h2>Edge</h2></div></div>'
+var gu = '<div class="card" data="guardian"><img src="dew://assets/maps/large/guardian.jpg"><div class="card-title"><h2>Guardian</h2></div></div>'
+var hi = '<div class="card" data="deadlock"><img src="dew://assets/maps/large/deadlock.jpg"><div class="card-title"><h2>High Ground</h2></div></div>'
+var ic = '<div class="card" data="s3d_turf"><img src="dew://assets/maps/large/s3d_turf.jpg"><div class="card-title"><h2>Icebox</h2></div></div>'
+var la = '<div class="card" data="zanzibar"><img src="dew://assets/maps/large/zanzibar.jpg"><div class="card-title"><h2>Last Resort</h2></div></div>'
+var na = '<div class="card" data="chill"><img src="dew://assets/maps/large//chill.jpg"><div class="card-title"><h2>Narrows</h2></div></div>'
+var re = '<div class="card" data="s3d_reactor"><img src="dew://assets/maps/large/s3d_reactor.jpg"><div class="card-title"><h2>Reactor</h2></div></div>'
+var sa = '<div class="card" data="shrine"><img src="dew://assets/maps/large/shrine.jpg"><div class="card-title"><h2>Sandtrap</h2></div></div>'
+var st = '<div class="card" data="Bunkerworld"><img src="dew://assets/maps/large/bunkerworld.jpg"><div class="card-title"><h2>Standoff</h2></div></div>'
+var th = '<div class="card" data="cyberdyne"><img src="dew://assets/maps/large/cyberdyne.jpg"><div class="card-title"><h2>The Pit</h2></div></div>'
+var va = '<div class="card" data="riverworld"><img src="dew://assets/maps/large/zanzibar.jpg"><div class="card-title"><h2>Valhalla</h2></div></div>'
+var image = "";
 dew.command('bind F10 game.showscreen mapselector');
+
+function baseMaptoImage(bmap) {
+    if (bmap == "diamondback") {
+        image = "s3d_avalanche";
+    }
+    else if(bmap == "edge") {
+        image = "s3d_edge";
+    }
+    else if(bmap == "guardian") {
+        image = "guardian";
+    }
+    else if(bmap == "highground") {
+        image = "deadlock";
+
+    }
+    else if(bmap == "icebox") {
+        image = "s3d_turf";
+
+    }
+    else if(bmap == "lastresort") {
+        image = "zanzibar";
+
+    }
+    else if(bmap == "narrows") {
+        image = "chill";
+
+    }
+    else if(bmap == "reactor") {
+        image = "s3d_reactor";
+
+    }
+    else if(bmap == "sandtrap") {
+        image = "shrine";
+
+    }
+    else if(bmap == "standoff") {
+        image = "bunkerworld";
+
+    }
+    else if(bmap == "thepit") {
+        image = "cyberdyne";
+
+    }
+    else if(bmap == "valhalla") {
+        image = "riverworld";
+
+    }
+    else {
+        image = "unknown";
+
+    }
+}
 
 function clearLists(){
     document.getElementById("diamondback").innerHTML = db;
@@ -39,7 +91,8 @@ function loadLists() {
     card.setAttribute('data', element.MapName);
 
     const mapImage = document.createElement('img');  
-    let thumb = "./img/"+ element.BaseMap +".jpg";
+    baseMaptoImage(element.BaseMap);
+    let thumb = "dew://assets/maps/large/"+ image +".jpg";
 
     
     mapImage.src = thumb;

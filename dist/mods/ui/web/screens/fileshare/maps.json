@@ -1,0 +1,10 @@
+[
+{ "MapName": "Air Ball", "BaseMap": "icebox" },
+{ "MapName": "BoomBall v1", "BaseMap": "reactor" },
+{ "MapName": "CoD Plaza", "BaseMap": "lastresort" },
+{ "MapName": "Donkey Kong V1", "BaseMap": "reactor" },
+{ "MapName": "HouseOfSpooxv2", "BaseMap": "standoff" },
+{ "MapName": "Sundown Lake V1", "BaseMap": "sandtrap" },
+{ "MapName": "Thrutch", "BaseMap": "standoff" },
+{ "MapName": "Thrutch Heavies", "BaseMap": "standoff" }
+]
