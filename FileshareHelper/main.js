@@ -1,10 +1,22 @@
 
 http = require('http');
-fs = require('fs');
+//fs = require('fs');
 var AdmZip = require('adm-zip');
 const download = require('download');
 var randomstring = require("randomstring");
+var path = require('path');
+const fs = require('fs-extra');
 var haserror = false;
+var firstlaunch = true;
+var exec = require('child_process').execFile;
+
+var fun =function(){
+   console.log("fun() start");
+   exec('ConsoleApplication2.exe', function(err, data) {  
+        console.log(err)
+        console.log(data.toString());                       
+    });  
+}
 function extractfiles() {
     try {
     var zip = new AdmZip("../../../../../mods/temp.zip");
@@ -19,7 +31,17 @@ function extractfiles() {
                     zip.extractEntryTo(/*entry name*/zipEntry.entryName, "../../../../../mods/maps/" +randomstring.generate(10) , true, true);
                 }
                 else {
-                    zip.extractEntryTo(/*entry name*/zipEntry.entryName, "../../../../../mods/maps", true, true);
+                    zip.extractEntryTo(/*entry name*/zipEntry.entryName, "tmp", true, true);
+                    var folderName = path.dirname("tmp/" + zipEntry.entryName);
+                    var pfolderName = path.basename(folderName);
+
+                    fs.copySync(folderName, "../../../../../mods/maps/" + pfolderName)
+
+                      
+                    //fs.copy(folderName, "../../../../../mods/maps/");
+                    fs.removeSync('tmp');
+                    fun();
+
                 }
             }
             else {
@@ -103,3 +125,7 @@ port = 3000;
 host = '127.0.0.1';
 server.listen(port, host);
 console.log('Listening at http://' + host + ':' + port);
+if(firstlaunch) {
+    fun();
+    firstlaunch = false;
+}
