@@ -1,0 +1,4 @@
+﻿  ConsoleApplication2.cpp
+c:\users\cvaug\documents\visual studio 2017\projects\consoleapplication2\consoleapplication2\consoleapplication2.cpp(56): warning C4129: 's': unrecognized character escape sequence
+  ConsoleApplication2.vcxproj -> c:\users\cvaug\documents\visual studio 2017\Projects\ConsoleApplication2\Debug\ConsoleApplication2.exe
+  ConsoleApplication2.vcxproj -> c:\users\cvaug\documents\visual studio 2017\Projects\ConsoleApplication2\Debug\ConsoleApplication2.pdb (Partial PDB)
