@@ -104,6 +104,12 @@
             "zIndex": 9
 		},
 		{
+            "id": "variantselector",
+            "url": "dew://screens/variantselector/",
+            "captureInput": true,
+            "zIndex": 9
+		},
+		{
 			"id": "forge_object_properties",
 			"var": "Game.ForgeObjectPropertiesURL",
 			"fallbackUrl": "dew://screens/forge/object_properties/",
