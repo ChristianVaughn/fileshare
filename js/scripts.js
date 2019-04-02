@@ -90,6 +90,10 @@ function changefocus(cid) {
     
     document.getElementById("text").innerHTML = text;
     document.getElementById("download-link").download = newData[cid]['dlMap'];
+    let link = 'https://dew.dewritohub.com/file/dh-images/' + newData[cid]['_id'] + '_' + '0' + '.jpg';
+    document.getElementById("download-link").data = link;
+
+
 }
 
 function diff_months(dt2, dt1) {
