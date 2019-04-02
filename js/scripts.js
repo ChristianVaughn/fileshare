@@ -123,10 +123,10 @@ function reload() {
         e.preventDefault(); //prevents button from multi clicking on one click
         var downloadlink =""+ this.download;
         var isk = "" + this.href;
-        var bob = "" + downloadlink +',';
-        console.log(this.downloadlink);
-        console.log(this.isk);
-        console.log(this.bob);
+        var bob = "" + downloadlink +',' + isk;
+        console.log(downloadlink);
+        console.log(isk);
+        console.log(bob);
 
 
         //sends a post request to node app and if everything goes right it returns 200 and if an error happened 404
