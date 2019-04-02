@@ -91,7 +91,7 @@ function changefocus(cid) {
     document.getElementById("text").innerHTML = text;
     document.getElementById("download-link").download = newData[cid]['dlMap'];
     let link = 'https://dew.dewritohub.com/file/dh-thumbs/' + newData[cid]['_id'] + '_' + '0' + '.jpg';
-    document.getElementById("download-link").setAttribute('data-image', link);
+    document.getElementById("download-link").setAttribute('href', link);
 
 
 }
@@ -122,8 +122,8 @@ function reload() {
         e.stopImmediatePropagation(); //prevents button from multi clicking on one click
         e.preventDefault(); //prevents button from multi clicking on one click
         var downloadlink = this.download;
-        downloadlink += "," + this.data;
-        console.log(this.data-image);
+        downloadlink += "," + this.href;
+        console.log(this.href);
 
         //sends a post request to node app and if everything goes right it returns 200 and if an error happened 404
         $.post('http://localhost:3000', this.download).done(function() {
