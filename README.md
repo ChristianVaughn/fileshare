@@ -25,11 +25,10 @@ Although this mod can do alot, there are a few issues that currently are impossi
 ## To-Do list and Bugs
 1. Try and bring back fileshare option in the maps menuwhat
 2. Rename maps with same name.
-3. Add new features as Finch upgrades the API. One of which potentially being uploading maps
-4. Fix not being able to download straignt sandbox.map files uploaded
-5. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and no folder
-6. Download map preview image along with map for the map selector menu
-7. Replace placeholder image on Variant selection screen
+3. Add new features as Finch upgrades the API. One of which potentially being uploading maps(unlikely because game menus are not https)
+4. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and on straight sandbox.map files.
+5. Download map preview image along with map for the map selector menu
+6. Replace placeholder image on Variant selection screen
 
 
 
