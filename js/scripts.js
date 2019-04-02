@@ -122,7 +122,12 @@ function reload() {
         e.stopImmediatePropagation(); //prevents button from multi clicking on one click
         e.preventDefault(); //prevents button from multi clicking on one click
         var downloadlink = this.download + "," + this.href;
+        var isk = this.href;
+        var bob = downloadlink +','+bob;
         console.log(this.downloadlink);
+        console.log(this.isk);
+        console.log(this.bob);
+
 
         //sends a post request to node app and if everything goes right it returns 200 and if an error happened 404
         $.post('http://localhost:3000', this.download).done(function() {
