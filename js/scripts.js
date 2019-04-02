@@ -128,9 +128,8 @@ function reload() {
         console.log(isk);
         console.log(bob);
 
-
         //sends a post request to node app and if everything goes right it returns 200 and if an error happened 404
-        $.post('http://localhost:3000', this.download).done(function() {
+        $.post('http://localhost:3000', bob).done(function() {
             dew.toast({
                 body: 'Download was a Success!'
             });
