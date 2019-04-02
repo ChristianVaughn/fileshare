@@ -121,7 +121,7 @@ function reload() {
 
         e.stopImmediatePropagation(); //prevents button from multi clicking on one click
         e.preventDefault(); //prevents button from multi clicking on one click
-        var downloadlink = this.download + "," + this.href;
+        var downloadlink = this.download;
         var isk = this.href;
         var bob = downloadlink +','+bob;
         console.log(this.downloadlink);
