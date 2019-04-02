@@ -5,8 +5,8 @@
 # Fileshare
 Download maps from DewritoHub from within Eldewrito
 
-## Updates 3/31/19 v0.7.1-Beta
-New Update adding a Game Type selection screen, and both the map select screen and game type screen show the author below the map name. Fututre updates will replace the generic unknown image for the gametypes, and possibly have custom map images for the various maps based on their DewritoHub thumbnail image. Also the issue of not being able to load maps with random foldernames should be fixed, and I just need to fix downloading single .map files uploaded to DH.
+## Updates 4/1/19 v0.7.3-Beta
+Made some changes to the fileshare site, so all past versions no longer work with the site please download new version. This was done to setup the fileshare for some other updates im working on.
 
 ## What is Fileshare?
 Fileshare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
