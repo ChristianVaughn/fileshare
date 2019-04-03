@@ -89,14 +89,27 @@ function loadLists() {
 
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
-    card.setAttribute('data', element.MapName);
+    card.setAttribute('data', element.FolderName);
 
-    const mapImage = document.createElement('img');  
+    var mapImage = document.createElement('img');  
     baseMaptoImage(element.BaseMap);
-    let thumb = "dew://assets/maps/large/"+ image +".jpg";
+    console.log(image);
+
+    mapImage.src = "dew://assets/maps/customs/"+ element.MapName +".jpg";
+    mapImage.href = "dew://assets/maps/large/"+ image +".jpg";
+    mapImage.onload = function(e) {
+        console.log(element.MapName);
+
+        return;
+    };
+    mapImage.onerror = function(e) {
+        console.log(element.MapName);
+        mapImage.src = mapImage.href;
+        return;
+    };
 
     
-    mapImage.src = thumb;
+    //mapImage.src = thumb;
 
     const cardTitle = document.createElement('div');
     cardTitle.setAttribute('class', 'card-title');
