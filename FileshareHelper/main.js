@@ -17,7 +17,14 @@ var fun =function(){
         console.log(data.toString());                       
     });  
 }
-function extractfiles() {
+function downloadImage(image_url, imageDest) {
+    download(image_url).then(data => {
+       
+        fs.writeFileSync(imageDest+'/mapimage.jpg', data);
+        return;
+    });
+}
+function extractfiles(image_url) {
     try {
     var zip = new AdmZip("../../../../../mods/temp.zip");
     var zipEntries = zip.getEntries(); // an array of ZipEntry records
@@ -34,8 +41,8 @@ function extractfiles() {
                     zip.extractEntryTo(/*entry name*/zipEntry.entryName, "tmp", true, true);
                     var folderName = path.dirname("tmp/" + zipEntry.entryName);
                     var pfolderName = path.basename(folderName);
-
-                    fs.copySync(folderName, "../../../../../mods/maps/" + pfolderName)
+                    fs.copySync(folderName, "../../../../../mods/maps/" + pfolderName);
+                    downloadImage(image_url, "../../../../../mods/maps/" + pfolderName);
 
                       
                     //fs.copy(folderName, "../../../../../mods/maps/");
@@ -82,11 +89,39 @@ server = http.createServer( function(req, res) {
         var body = '';
         req.on('data', function (data) {
             body += data;
-            var file_url = body;
+            var nameArr = body.split(',');
+            var file_url = nameArr[0];
+           var image_url = nameArr[1];
 
           download(file_url).then(data => {
-            fs.writeFileSync('../../../../../mods/temp.zip', data);
-            extractfiles();
+              console.log(file_url.slice(-3));
+
+            if (file_url.slice(-4) == ".map") {
+                if (!fs.existsSync('../../../../../mods/tmp/')){
+
+                    fs.mkdirSync('../../../../../mods/tmp/');
+                }
+
+                fs.writeFileSync('../../../../../mods/tmp/sandbox.map', data);
+
+                var folderName = path.dirname('../../../../../mods/tmp/sandbox.map');
+                var folderName2 = path.dirname('../../../../../mods/tmp/mapimage.jpg');
+                var pfolderName = path.basename(folderName);
+                
+                var ran = randomstring.generate(10);
+                fs.copySync(folderName, "../../../../../mods/maps/" + ran);
+                downloadImage(image_url, "../../../../../mods/maps/" + ran);
+
+                //fs.copy(folderName, "../../../../../mods/maps/");
+                fs.removeSync('../../../../../mods/tmp');
+                fun();
+            }
+            else {
+
+                fs.writeFileSync('../../../../../mods/temp.zip', data);
+                extractfiles(image_url);
+            }
+            
             if(haserror == true) {
             res.writeHead(404, {'Content-Type': 'text/html'});
             res.end('post received');
