@@ -5,8 +5,8 @@
 # Fileshare
 Download maps from DewritoHub from within Eldewrito
 
-## Updates 4/1/19 v0.7.3-Beta
-Made some changes to the fileshare site, so all past versions no longer work with the site please download new version. This was done to setup the fileshare for some other updates im working on.
+## Updates 4/2/19 v0.7.4-Beta
+Made some changes to the fileshare site, so all past versions no longer work with the site please download new version. This new update has map preview images on the map selector CEF menu. Updates will be sparse for the next few weeks as I study for exams
 
 ## What is Fileshare?
 Fileshare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
@@ -20,15 +20,14 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 ## Download and Use
  Download the latest release [here](https://github.com/cvaughn55/fileshare/releases)
- Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.
+ Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.(Map and gametype selectors only work in the lobbies)
 
 ## To-Do list and Bugs
 1. Try and bring back fileshare option in the maps menuwhat
 2. Rename maps with same name.
 3. Add new features as Finch upgrades the API. One of which potentially being uploading maps(unlikely because game menus are not https)
 4. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and on straight sandbox.map files.
-5. Download map preview image along with map for the map selector menu
-6. Replace placeholder image on Variant selection screen
+5. Replace placeholder image on Variant selection screen
 
 
 
