@@ -140,9 +140,14 @@ bool listMaps()
 		{
 			if (!is_regular_file(itr->path()))
 			{
-				std::string file = std::string(itr->path().generic_string());
+				std::string file = std::string(itr->path().generic_string());\
+				std::string file2 = std::string(itr->path().generic_string());
+
 				file.append("\\sandbox.map"); // for windows switch the slash sign 
+				file2.append("\\mapimage.jpg"); // for windows switch the slash sign 
 				auto path = boost::filesystem::path(file);
+				auto path2 = boost::filesystem::path(file2);
+
 				int customMapId = GetCustomMapId(file);
 				string mapnm = mapIdToString(customMapId);
 				string customAuthor = GetCustomMapInfo(file, 0x1F0, true);
@@ -163,6 +168,9 @@ bool listMaps()
 					temp += itr->path().filename().string();
 					temp += +"\" }";
 					vec.push_back(temp);
+					if (boost::filesystem::exists(path2)) {
+						boost::filesystem::rename(file2, "..\\..\\assets\\maps\\customs\\" + customTitle + ".jpg");//change slash for windows
+					}
 					//std::cout << (itr->path().filename().string());
 					//std::cout << std::endl << "csd" << std::endl;
 				}
