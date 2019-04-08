@@ -33,7 +33,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
 
 
 ## Help/Support/Contact
-You can ping me on the [ElDewrito Forge Discord](https://discord.gg/PnRePfv), the [DewritoHub Discord](https://discord.gg/gtqM3s5), or any of the other big Eldewrito related Discords if you have any issues, suggestions, or any other info about Fileshare.
+You can ping me on the [ElDewrito Forge Discord](https://discord.gg/PnRePfv), the [DewritoHub Discord](https://discord.gg/gtqM3s5),  [The Beer Keg Discord](https://discord.gg/PJ4Wm4M), the [HB Discord](https://discord.gg/VzMX2Kq) or the [Halo Vault Discord](https://discord.gg/GycDpDj)  if you have any issues, suggestions, or any other info about Fileshare. Don't come looking for me in the Official Eldewrito Discord because I am not there. Only the servers above.
 
 
 If you have issues you can get in touch with me in those places, or make a bug report in the issue tracker and I can look over it.
