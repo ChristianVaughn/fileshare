@@ -1,11 +1,13 @@
 dew.on("show", function() {
     
+    
     dew.command('Game.HideH3UI 1');
     
     if(firstload) {
         // updates the screen since this is the first load of the menu and sets the sort to new
         currentSort = "New";
         updateScreen('https://dewritohub.com/api/altfetch?r=' + new Date());
+        swal("NEW Fileshare URL Download v0.7.5-Beta", "Download the new Fileshare update from Dewritohub or the Github. Old versions will stop working on 4/17 due to URL change.");
         firstload = false;
     }
     

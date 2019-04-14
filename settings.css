@@ -1221,3 +1221,19 @@ small {
     padding-right: var(--side-margin);
     z-index: 99;
 }
+.swal-modal {
+	background-color: #2a3e5ab0;
+  }
+  .swal-text {
+
+	text-align: center;
+	color: #FFFFFF;
+  }
+  .swal-title {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+	color: #FFFFFF;
+
+  }
+  .swal-button {
+  background-color: #2a3e5a;
+}
