@@ -26,7 +26,7 @@ Although this mod can do alot, there are a few issues that currently are impossi
  Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.(Map and gametype selectors only work in the lobbies)
 
 ## To-Do list and Bugs
-1. Add new features as Finch upgrades the API. One of which potentially being uploading maps(unlikely because game menus are not https)
+1. Add new features as Finch upgrades the API. One of which potentially being uploading maps(Site currently not https because github is being weird)
 2. Replace placeholder image on Variant selection screen
 3. Fix issues with ported maps not downloading properly
 4. Rewrite the map selection screen to dynamically create headers based on maps user actually has(aka allow for ported maps to have tabs)
