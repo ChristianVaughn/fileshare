@@ -6,8 +6,12 @@
 #include <iostream>
 #include<fstream>
 #include <boost/filesystem.hpp>
+#include <boost/algorithm/string.hpp>
 #include <vector>
 #include <string>     // std::string, std::to_string
+#include <ctime>
+#include <windows.h>
+
 
 
 //0x1F0 for username offset reads from 00 to 0E
@@ -39,6 +43,15 @@ void makeJson(vector<string> &vec, bool ismaps) {
 	out << "]";
 	out.close();
 	return;
+}
+std::string current_date(int64_t tame) {
+	time_t now = tame;
+	struct tm tstruct;
+	char buf[40];
+	tstruct = *localtime(&now);
+	//format: day DD-MM-YYYY
+	strftime(buf, sizeof(buf), "%D", &tstruct);
+	return buf;
 }
 string mapIdToString(int mapid) {
 	if (mapid == 705) {
@@ -127,7 +140,20 @@ int GetCustomMapId(const std::string &fullMapName)
 	mapFile.read(reinterpret_cast<char*>(&mapId), sizeof(mapId));
 	return mapId;
 }
+int64_t GetCustomMapDate(const std::string &fullMapName)
+{
+	// Open the .map file
+	auto mapPath = fullMapName;
+	std::ifstream mapFile(mapPath, std::ios::binary);
+	if (!mapFile.is_open())
+		return -1;
 
+	// Read map ID
+	int64_t mapId = 0;
+	mapFile.seekg(0x110);
+	mapFile.read(reinterpret_cast<char*>(&mapId), sizeof(mapId));
+	return mapId;
+}
 bool listMaps()
 {
 	vector<string> vec;
@@ -140,8 +166,9 @@ bool listMaps()
 		{
 			if (!is_regular_file(itr->path()))
 			{
-				std::string file = std::string(itr->path().generic_string());\
+				std::string file = std::string(itr->path().generic_string());
 				std::string file2 = std::string(itr->path().generic_string());
+				std::string file3 = file;
 
 				file.append("\\sandbox.map"); // for windows switch the slash sign 
 				file2.append("\\mapimage.jpg"); // for windows switch the slash sign 
@@ -149,10 +176,14 @@ bool listMaps()
 				auto path2 = boost::filesystem::path(file2);
 
 				int customMapId = GetCustomMapId(file);
+				int64_t date = GetCustomMapDate(file);
 				string mapnm = mapIdToString(customMapId);
 				string customAuthor = GetCustomMapInfo(file, 0x1F0, true);
 				string customTitle = GetCustomMapInfo(file, 0x150, true);
 				string customDesc = GetCustomMapInfo(file, 0x170, true);
+				string folderName = customTitle;
+
+				boost::erase_all(folderName, ".");
 
 				if (boost::filesystem::exists(path)) {
 					string temp = "{ \"MapName\": \"";
@@ -164,18 +195,55 @@ bool listMaps()
 					temp += customAuthor;
 					temp += "\", \"Desc\": \"";
 					temp += customDesc;
-					temp += "\", \"FolderName\": \"";
-					temp += itr->path().filename().string();
-					temp += +"\" }";
-					vec.push_back(temp);
 					if (boost::filesystem::exists(path2)) {
 						boost::filesystem::rename(file2, "..\\..\\assets\\maps\\customs\\" + customTitle + ".jpg");//change slash for windows
 					}
-					//std::cout << (itr->path().filename().string());
-					//std::cout << std::endl << "csd" << std::endl;
+					auto path3 = boost::filesystem::path("../../../../maps/" + folderName);
+
+					if (!boost::contains(itr->path().filename().string(), customTitle)) {
+
+						if ((boost::filesystem::exists(path3) && boost::filesystem::is_empty(path3)) || !boost::filesystem::exists(path3)) {
+							boost::filesystem::rename(file3, "..\\..\\..\\..\\maps\\" + folderName);
+
+						}
+						else {
+							int64_t date2 = GetCustomMapDate("../../../../maps/" + folderName + "/sandbox.map");
+							//cout << date << endl;
+							//cout << date2 << endl;
+							if (date == date2) {
+							boost::filesystem::remove_all(file3);
+							}
+							else {
+								int count = 1;
+								while (true) {
+									if (!boost::filesystem::exists(boost::filesystem::path("../../../../maps/" + folderName + std::to_string(count)))) {
+										boost::filesystem::rename(file3, "..\\..\\..\\..\\maps\\" + folderName + std::to_string(count));
+										folderName += std::to_string(count);
+										break;
+									}
+									else {
+										int64_t date3 = GetCustomMapDate("../../../../maps/" + folderName + std::to_string(count) + "/sandbox.map");
+											if (date == date3) {
+												boost::filesystem::remove_all(file3);
+												break;
+											}
+
+									}
+									count++;
+								}
+							}
+						}
+					}
+					
+
+					temp += "\", \"FolderName\": \"";
+					temp += folderName;
+					temp += "\", \"Date\": \"";
+					temp += current_date(date);
+					temp += +"\" }";
+					vec.push_back(temp);
+
 				}
-				//std::cout << (itr->path().filename().string());
-				//std::cout << std::endl << file << std::endl << path << endl;
 			}
 		}
 		makeJson(vec, true);
@@ -184,6 +252,7 @@ bool listMaps()
 }
 bool listModes(string mode)
 {
+
 	boost::filesystem::path p("../../../../variants/");
 	boost::filesystem::directory_iterator end_itr;
 	if (boost::filesystem::exists(p))
@@ -194,14 +263,17 @@ bool listModes(string mode)
 			if (!is_regular_file(itr->path()))
 			{
 				std::string file = std::string(itr->path().generic_string());
+				std::string file3 = file;
 				string type = "\\variant.";
 				file.append(type += mode); // for windows switch the slash sign 
 				auto path = boost::filesystem::path(file);
 				string customAuthor = GetCustomMapInfo(file, 0xE8, false);
+				int64_t date = GetCustomMapDate(file);
 				string customTitle = GetCustomMapInfo(file, 0x178, false);
 				string customDesc = GetCustomMapInfo(file, 0x198, false);
 				string customMode = GetCustomMapInfo(file, 0x150, false);
-
+				string folderName = customTitle;
+				boost::erase_all(folderName, ".");
 
 				if (boost::filesystem::exists(path)) {
 					string temp = "{ \"MapName\": \"";
@@ -214,23 +286,80 @@ bool listModes(string mode)
 					temp += customDesc;
 					temp += "\", \"SpecificMode\": \"";
 					temp += customMode;
+					
+					auto path3 = boost::filesystem::path("../../../../variants/" + folderName);
+
+					if (!boost::contains(itr->path().filename().string(), customTitle)) {
+
+						if ((boost::filesystem::exists(path3) && boost::filesystem::is_empty(path3)) || !boost::filesystem::exists(path3)) {
+							boost::filesystem::rename(file3, "..\\..\\..\\..\\variants\\" + folderName);
+
+						}
+						else {
+							int64_t date2 = GetCustomMapDate("../../../../variants/" + folderName + "/variant." +mode);
+							//cout << date << endl;
+							//cout << date2 << endl;
+							if (date == date2) {
+								boost::filesystem::remove_all(file3);
+							}
+							else {
+								int count = 1;
+								while (true) {
+									if (!boost::filesystem::exists(boost::filesystem::path("../../../../variants/" + folderName + std::to_string(count)))) {
+										boost::filesystem::rename(file3, "..\\..\\..\\..\\variants\\" + folderName + std::to_string(count));
+										folderName += std::to_string(count);
+										break;
+									}
+									else {
+										int64_t date3 = GetCustomMapDate("../../../../maps/" + folderName + std::to_string(count) + "/sandbox.map");
+										if (date == date3) {
+											boost::filesystem::remove_all(file3);
+											break;
+										}
+
+									}
+									count++;
+								}
+							}
+						}
+					}
+					/*if (!boost::contains(itr->path().filename().string(), customTitle)) {
+						if ((boost::filesystem::exists(path3) && boost::filesystem::is_empty(path3)) || !boost::filesystem::exists(path3)) {
+							boost::filesystem::rename(file3, "..\\..\\..\\..\\variants\\" + folderName);
+
+						}
+						else {
+							int count = 1;
+							while (true) {
+								if (!boost::filesystem::exists(boost::filesystem::path("../../../../variants/" + folderName + std::to_string(count)))) {
+									boost::filesystem::rename(file3, "..\\..\\..\\..\\variants\\" + folderName + std::to_string(count));
+									folderName += std::to_string(count);
+
+									break;
+								}
+								count++;
+							}
+
+						}
+					}*/
+
 					temp += "\", \"FolderName\": \"";
-					temp += itr->path().filename().string();
+					temp += folderName;
+					temp += "\", \"Date\": \"";
+					temp += current_date(date);
 					temp += +"\" }";
 					vec2.push_back(temp);
-					//std::cout << (itr->path().filename().string());
-					//std::cout << std::endl << "csd" << std::endl;
 				}
-				//std::cout << (itr->path().filename().string());
-				//std::cout << std::endl << file << std::endl << path << endl;
 			}
 		}
 	}
 	return true;
 }
 
-
-int main() {
+int WINAPI WinMain(HINSTANCE inst, HINSTANCE prev, LPSTR cmd, int show)
+{
+//int main() {
+	//cout << "lol" << endl;
 	listMaps();
 	listModes("zombiez");
 	listModes("assault");
