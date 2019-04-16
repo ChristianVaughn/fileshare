@@ -1,6 +1,7 @@
 dew.on("show", function() {
     
     dew.command('Game.HideH3UI 1');
+
     loadLists();
 
 

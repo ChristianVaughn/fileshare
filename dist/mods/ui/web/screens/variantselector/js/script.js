@@ -70,6 +70,9 @@ function loadLists() {
     h2.textContent = element.MapName;
     const small = document.createElement('small');
     small.textContent = element.Author;
+    const uploaddate = document.createElement('small');
+    uploaddate.setAttribute('class', 'time');
+    uploaddate.textContent = element.Date;
 
     const app = document.getElementById(element.BaseMode);
 
@@ -78,6 +81,8 @@ function loadLists() {
     card.appendChild(cardTitle);
     cardTitle.appendChild(h2);
     cardTitle.appendChild(small); 
+    cardTitle.appendChild(uploaddate);
+
 	 
     }
     });
