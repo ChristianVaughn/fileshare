@@ -5,8 +5,11 @@
 # Fileshare
 Download maps from DewritoHub from within Eldewrito
 
-## Updates 4/13/19 v0.7.5-Beta
-URL for fileshare is new and thats the only change. A bigger update was suposed to release this weekend, but my code randomly stopped working, so i am trying to either debug my code from a few weeks ago when i took a break, or just go back to the last release and re-do the code.
+## Updates 4/15/19 v0.8.0-Beta
+1. Fixed overwriting existing map/variant if one with same name already exists. Folder for map trying to download is changed if it is a different map.
+2. Fixed issues downloading prefabs, non-zipped files, and zip files with multiple .map or variant files
+3. Added date of creation to map/variant cards in selection menu
+4. Some other backend stuff I can't remember but probably did
 
 ## What is Fileshare?
 Fileshare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
@@ -23,11 +26,11 @@ Although this mod can do alot, there are a few issues that currently are impossi
  Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.(Map and gametype selectors only work in the lobbies)
 
 ## To-Do list and Bugs
-1. Try and bring back fileshare option in the maps menuwhat
-2. Rename maps with same name.
-3. Add new features as Finch upgrades the API. One of which potentially being uploading maps(unlikely because game menus are not https)
-4. Fix foldername being incorrect on zip downloads that only contain a sandbox.map and on straight sandbox.map files.
-5. Replace placeholder image on Variant selection screen
+1. Add new features as Finch upgrades the API. One of which potentially being uploading maps(unlikely because game menus are not https)
+2. Replace placeholder image on Variant selection screen
+3. Fix issues with ported maps not downloading properly
+4. Rewrite the map selection screen to dynamically create headers based on maps user actually has(aka allow for ported maps to have tabs)
+5. Possibly try and add controler or keyboard support(Not super important)
 
 
 
