@@ -5,11 +5,8 @@
 # Fileshare
 Download maps from DewritoHub from within Eldewrito
 
-## Updates 4/15/19 v0.8.0-Beta
-1. Fixed overwriting existing map/variant if one with same name already exists. Folder for map trying to download is changed if it is a different map.
-2. Fixed issues downloading prefabs, non-zipped files, and zip files with multiple .map or variant files
-3. Added date of creation to map/variant cards in selection menu
-4. Some other backend stuff I can't remember but probably did
+## Updates 4/20/19 v0.8.1-Beta
+Made some minor UI changes to the Map and Variant Selection CEF menus, and renamed ConsoleApplication2 to FileshareTool.exe
 
 ## What is Fileshare?
 Fileshare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
