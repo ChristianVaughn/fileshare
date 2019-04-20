@@ -90,6 +90,9 @@ string mapIdToString(int mapid) {
 	else if (mapid == 340) {
 		return "valhalla";
 	}
+	else {
+		return "ported";
+	}
 }
 string GetCustomMapInfo(const std::string &fullMapName, int offset, bool ismap)
 {
