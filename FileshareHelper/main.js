@@ -12,7 +12,7 @@ var exec = require('child_process').execFile;
 
 var fun =function(){
    console.log("fun() start");
-   exec('ConsoleApplication2.exe', function(err, data) {  
+   exec('FileshareTool.exe', function(err, data) {  
         console.log(err)
         console.log(data.toString());                       
     });  
