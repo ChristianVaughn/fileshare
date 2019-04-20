@@ -85,7 +85,7 @@ function loadLists() {
    clearLists();
  $.getJSON("dew://screens/fileshare/maps.json", function(data) {    $.each(data, function(index, element) {
 
-    if (element.BaseMap != "") {
+    if (element.BaseMap != "" || element.BaseMap != "ported") {
 
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
