@@ -7,7 +7,7 @@ dew.on("show", function() {
         // updates the screen since this is the first load of the menu and sets the sort to new
         currentSort = "New";
         updateScreen('https://dewritohub.com/api/altfetch?r=' + new Date());
-        swal("v0.8.0-Beta Released", "Download the new update from Dewritohub or the Github. Change logs are on both sites, and fileshare should be more stable than ever.");
+        swal("One Last URL Change", "On Monday May 20th, at 5pm PDT the URL will change one more time, but remain that for ever. Please download the new update which will release around that time.");
         firstload = false;
     }
     
