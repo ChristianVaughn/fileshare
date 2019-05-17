@@ -19,7 +19,7 @@ Although this mod can do alot, there are a few circumstances that make the mod a
 
 ## Download and Use
  Download the latest release [here](https://github.com/cvaughn55/fileshare/releases)
- Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use EDFileshareLauncher.exe instead of eldorado.exe in order to get the fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.(Map and gametype selectors only work in the lobbies)
+ Extract the zip to the root of your Eldewrito folder(Aka the place where eldorado.exe is), and use DewShareLauncher.exe instead of eldorado.exe in order to get the fileshare working. Once the game is loaded press F12 to open the Fileshare, press F10 to open the map selector, and press F9 to open the game type selector.(Map and gametype selectors only work in the lobbies)
 
 ## To-Do list and Bugs
 1. Add new features as Finch upgrades the API. One of which potentially being uploading maps.
