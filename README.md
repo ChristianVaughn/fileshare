@@ -3,8 +3,8 @@
 
 **Download maps from DewritoHub from within Eldewrito**
 
-## Updates 4/20/19 v0.8.1-Beta
-Made some minor UI changes to the Map and Variant Selection CEF menus, and renamed ConsoleApplication2 to FileshareTool.exe
+## Updates 5/17/19 v0.8.1-Beta
+Changed some URL stuff for the last time, so I replaced the v0.8.1 DL instead of a whole new version number since little changed.
 
 ## What is DewShare?
 DewShare is an addon CEF screen for Eldewrito that adds the capability to download maps in game from [DewritoHub](https://dewritohub.com). Users can search using tags such as #infection or through map names like TanksObama. Along with being able to search for files, users can sort them based on New, Top, Featured, and Updated. All info displayed is straight from the DewritoHub API.
